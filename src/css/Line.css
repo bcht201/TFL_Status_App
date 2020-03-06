@@ -1,0 +1,72 @@
+.tubeLine{
+    height: 100px;
+    width: 250px;
+    padding: 0% 0%;
+    margin: 0px 6px 10px;
+    text-align: center;
+    /* background-color:  coral; */
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.bar{
+    height: 3px;
+    width: 100%;
+    padding: 5px 0px;
+}
+
+#bakerloo{
+    border-color: rgb(178, 99, 0);
+    background-color: rgb(178, 99, 0);
+}
+
+#central{
+    background-color: rgb(220, 36, 31);
+    border-color: rgb(220, 36, 31);
+}
+
+#circle{
+    background-color: rgb(255, 211, 41);
+    border-color: rgb(255, 211, 41);
+}
+#district{
+    background-color: rgb(0, 125, 50);
+    border-color: rgb(0, 125, 50);
+}
+
+#hammersmith-city{
+    background-color: rgb(244, 169, 190);
+    border-color: rgb(244, 169, 190);
+}
+
+#jubilee{
+    background-color: rgb(161, 165, 167);
+    border-color: rgb(161, 165, 167);
+}
+
+#metropolitan{
+    background-color: rgb(155, 0, 88);
+    border-color: rgb(155, 0, 88);
+}
+
+#northern{
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+}
+
+#piccadilly{
+    background-color: rgb(0, 25, 168);
+    border-color: rgb(0, 25, 168);
+}
+
+#victoria{
+    background-color: rgb(0, 152, 216);
+    border-color: rgb(0, 152, 216);
+}
+
+#waterloo-city{
+    background-color: rgb(147, 206, 186);
+    border-color: rgb(147, 206, 186);
+}

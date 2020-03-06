@@ -1,26 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './css/App.css';
+import Line from './components/Line';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch,
+  Redirect
+} from 'react-router-dom';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state= {
+        data: [],
+        lastUpdated: null
+    }
+  }
+
+  componentDidMount = () =>{
+    this.fetchData();
+  }
+
+  fetchData = () =>{
+    axios.get('https://api.tfl.gov.uk/line/mode/tube/status')
+      .then(response => this.setState({data: response.data}))
+  }
+  
+  render(){
+    if(this.state.data.length !== 0){
+      return(
+        <div className="App">
+          
+          {this.state.data.map((tubeline) => {
+            return <Line info = {tubeline}></Line>
+          })}
+        </div>
+      )
+    }
+    else{
+      return (
+        <h1>Loading...</h1>
+      );
+    }
+  }
 }
 
 export default App;
