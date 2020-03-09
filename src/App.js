@@ -32,10 +32,10 @@ class App extends React.Component {
     if(this.state.data.length !== 0){
       return(
         <div className="App">
-          
-          {this.state.data.map((tubeline) => {
-            return <Line info = {tubeline}></Line>
-          })}
+          <div><h1>How is the London Underground right now?</h1></div>
+          <div className="Dashboard">
+            {this.state.data.map((tubeline) => <Line info = {tubeline}></Line>)}
+          </div>
         </div>
       )
     }
