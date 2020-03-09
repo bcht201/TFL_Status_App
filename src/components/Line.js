@@ -1,9 +1,13 @@
 import React from 'react';
 import '../css/Line.css'
 
-
-
 const Line = (props) =>{
+    const trimStatus = (status) =>{
+        let position = status.search(":")
+        let newStatus = status.slice(position + 1);
+        return newStatus;
+    }
+    
     return(
         <div className="tubeLine" >
             <p className="name" >{props.info.name}</p>
@@ -16,7 +20,7 @@ const Line = (props) =>{
                     } */}
                 </p>
                 {props.info.lineStatuses[0].reason ?
-                    <p className="statusDetails">{props.info.lineStatuses[0].reason}</p>
+                    <p className="statusDetails">{trimStatus(props.info.lineStatuses[0].reason)}</p>
                         : <p className="statusDetails" id={props.info.lineStatuses[0].statusSeverity}>{props.info.lineStatuses[0].statusSeverityDescription} </p>
                 }
             </div>

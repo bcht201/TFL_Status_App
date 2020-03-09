@@ -13,8 +13,19 @@
     box-sizing: border-box;
 }
 
+.name{
+    font-size: 20px;
+}
+
 .status{
+    color: red;
+    font-weight: bold;
     font-size: 16px;
+}
+
+[id ='10']{
+    color: green;
+    font-weight: normal;
 }
 
 .statusDetails{
@@ -81,19 +92,7 @@
     border-color: rgb(147, 206, 186);
 }
 
-.name{
-    font-size: 20px;
-}
 
-.status{
-    color: red;
-    font-weight: bold;
-}
-
-[id ='10']{
-    color: green;
-    font-weight: normal;
-}
 
 .tubeLine:hover {
     /* box-shadow: inset 400px 0 0 0 rgb(178, 99, 0); */
