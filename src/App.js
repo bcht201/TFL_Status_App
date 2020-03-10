@@ -16,7 +16,7 @@ class App extends React.Component {
     super(props);
     this.state= {
         data: [],
-        lastUpdated: null,
+        nextUpdate: null,
         lines: []
     }
   }
