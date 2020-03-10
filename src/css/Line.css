@@ -9,6 +9,29 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    transition: ease-out 0.4s;
+    box-sizing: border-box;
+}
+
+.name{
+    font-size: 20px;
+}
+
+.status{
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.statusDetails{
+    font-size: 0;
+    color: red;
+    font-weight: bold;
+}
+
+[id ='10']{
+    color: green;
+    font-weight: normal;
 }
 
 .bar{
@@ -69,4 +92,19 @@
 #waterloo-city{
     background-color: rgb(147, 206, 186);
     border-color: rgb(147, 206, 186);
+}
+
+.tubeLine:hover {
+    border: 1px black solid;
+}
+
+.tubeLine:hover .status{
+    font-size: 0;
+}
+
+.tubeLine:hover .statusDetails{
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
