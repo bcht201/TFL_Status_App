@@ -16,17 +16,26 @@ class App extends React.Component {
     super(props);
     this.state= {
         data: [],
-        lastUpdated: null
+        lastUpdated: null,
+        lines: []
     }
   }
 
   componentDidMount = () =>{
     this.fetchData();
+    
   }
 
   fetchData = () =>{
     axios.get('https://api.tfl.gov.uk/line/mode/tube/status')
       .then(response => this.setState({data: response.data}))
+      .then( () => this.setStations());
+  }
+
+  setStations = () =>{
+    let tempArr = [];
+    this.state.data.map( result =>{ tempArr.push(result.id)});
+    this.setState({lines: tempArr});
   }
   
   render(){
@@ -36,7 +45,7 @@ class App extends React.Component {
           <div className="App">
             <Switch>
               <Route path='/line'>
-                <Details></Details>
+                <Details lines={this.state.lines}></Details>
               </Route>
               <Route exact path='/'>
                   <div className="Title"><h1>How is the London Underground right now?</h1></div>

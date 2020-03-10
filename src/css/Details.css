@@ -1,0 +1,9 @@
+.details{
+    min-height: 100vh;
+    width: 95%;
+}
+
+a{
+    font-family: 'Oswald', sans-serif;
+    font-size: 45px;
+}
