@@ -45,7 +45,7 @@ class App extends React.Component {
           <div className="App">
             <Switch>
               <Route path='/line'>
-                <Details lines={this.state.lines}></Details>
+                <Details lines={this.state.lines} data={this.state.data}></Details>
               </Route>
               <Route exact path='/'>
                   <div className="Title"><h1>How is the London Underground right now?</h1></div>

@@ -4,7 +4,9 @@ import '../css/Details.css'
 
 const Details = (props) =>{
     let query = new URLSearchParams(useLocation().search).get('name');
-    let parseAndCapitalise = (query) =>{
+    let findPosition = props.lines.indexOf(query);
+
+    const parseAndCapitalise = (query) =>{
         let parsedQuery = query.replace("-", " & ");
         let final = parsedQuery.split(' ')
                     .map( string => string.charAt(0).toUpperCase() + string.substring(1))
@@ -12,7 +14,13 @@ const Details = (props) =>{
         return final;
     }
 
-    if(props.lines.indexOf(query) == -1){
+    const trimStatus = (status) =>{
+        let position = status.search(":")
+        let newStatus = status.slice(position + 1);
+        return newStatus;
+    }
+
+    if(findPosition === -1){
         return(
             <Redirect to="/"/>
         )
@@ -20,8 +28,17 @@ const Details = (props) =>{
     else{
         return(
             <div className='details'>
-                <Link to="/" className="Home-button">Tube Status</Link>
-                <h1>How is the {parseAndCapitalise(query)} line?</h1>
+                <Link to="/" className="Home-button">Home</Link>
+                <div className="info">
+                    <h1 className={ "line " + query}> {parseAndCapitalise(query)}: </h1>
+                    <h1 className="current-status">{props.data[findPosition].lineStatuses[0].statusSeverityDescription} </h1>
+                </div>
+                
+                    {props.data[findPosition].lineStatuses[0].reason ? 
+                        <p className="reason disruption"> {trimStatus(props.data[findPosition].lineStatuses[0].reason)}</p>
+                        : <p className="reason goodService">No disruptions anywhere on the line.</p>
+                    }
+                
             </div>
         )
     }
