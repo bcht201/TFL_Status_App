@@ -38,7 +38,6 @@ const Details = (props) =>{
                         <p className="reason disruption"> {trimStatus(props.data[findPosition].lineStatuses[0].reason)}</p>
                         : <p className="reason goodService">No disruptions anywhere on the line.</p>
                     }
-                
             </div>
         )
     }

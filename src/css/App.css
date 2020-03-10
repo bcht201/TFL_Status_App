@@ -24,7 +24,7 @@
 
 h1{
     font-family: 'Oswald', sans-serif;
-    font-size: 90px;
+    font-size: 60px;
     text-align: center;
     margin-bottom: 3%;
 }
@@ -34,3 +34,20 @@ a{
     color: black;
 }
 
+@media (min-width: 768px){
+    .Title h1{
+        font-size: 70px;
+    }
+}
+
+@media (min-width: 992px){
+    .Title h1{
+        font-size: 80px;
+    }
+}
+
+@media (min-width: 1200px){
+    .Title h1{
+        font-size: 90px;
+    }
+}

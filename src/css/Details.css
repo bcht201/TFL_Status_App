@@ -24,6 +24,33 @@ p, h1, a{
     font-size: 30px;
 }
 
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+.info h1{
+    text-align: left;
+}
+
+@media (min-width: 768px){
+    .info{
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 992px){
+    .info{
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1200px){
+    .info{
+        flex-direction: row;
+    }
+}
+
 .disruption{
     color: red
 }
@@ -75,11 +102,3 @@ p, h1, a{
     color: rgb(147, 206, 186);
 }
 
-.info{
-    display: flex;
-    flex-direction: row;
-}
-
-.info h1{
-    text-align: left;
-}
