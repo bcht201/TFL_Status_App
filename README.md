@@ -3,9 +3,9 @@ The idea of this project is to use the TFL api to create a deployed website that
 Link: https://immense-brook-90012.herokuapp.com/
 
 ## Available Scripts
-
 In the project directory, you can run:
-
+### `npm install`
+- Install all dependencies required to run the app
 ### `npm start`
-### `npm test`
-### `npm run build`
+- Start the app 
+
