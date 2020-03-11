@@ -50,14 +50,16 @@ class App extends React.Component {
           <div className="App">
             <Switch>
               <Route path='/line'>
-                <Details lines={this.state.lines} data={this.state.data}></Details>
+                <Details lines={this.state.lines} data={this.state.data} updated={this.state.lastUpdate}></Details>
               </Route>
               <Route exact path='/'>
                   <div className="Title"><h1>How is the London Underground right now?</h1></div>
                   <div className="Dashboard">
                     {this.state.data.map((tubeline) => <Line info = {tubeline}></Line>)}
                   </div>
-                  <div>Last updated: {this.state.lastUpdate}</div>
+                  <div className="lastUpdated">
+                    <p>Last updated: {this.state.lastUpdate}</p>
+                  </div>
               </Route>
             </Switch>
           </div>

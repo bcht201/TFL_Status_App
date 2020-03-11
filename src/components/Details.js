@@ -33,11 +33,13 @@ const Details = (props) =>{
                     <h1 className={ "line " + query}> {parseAndCapitalise(query)}: </h1>
                     <h1 className="current-status">{props.data[findPosition].lineStatuses[0].statusSeverityDescription} </h1>
                 </div>
-                
-                    {props.data[findPosition].lineStatuses[0].reason ? 
-                        <p className="reason disruption"> {trimStatus(props.data[findPosition].lineStatuses[0].reason)}</p>
-                        : <p className="reason goodService">No disruptions anywhere on the line.</p>
-                    }
+                {props.data[findPosition].lineStatuses[0].reason ? 
+                    <p className="reason disruption"> {trimStatus(props.data[findPosition].lineStatuses[0].reason)}</p>
+                    : <p className="reason goodService">No disruptions anywhere on the line.</p>
+                }
+                <div className="lastUpdated">
+                    <p>Last updated: {props.updated}</p>
+                </div>
             </div>
         )
     }

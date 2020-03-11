@@ -22,8 +22,11 @@
     /* background-color: coral; */
 }
 
-h1{
+p, h1{
     font-family: 'Oswald', sans-serif;
+}
+
+h1{
     font-size: 60px;
     text-align: center;
     margin-bottom: 3%;
@@ -32,6 +35,10 @@ h1{
 a{
     text-decoration: none;
     color: black;
+}
+
+.lastUpdated{
+    margin-top: 25px;
 }
 
 @media (min-width: 768px){
