@@ -10,26 +10,31 @@ import {
   Redirect
 } from 'react-router-dom';
 import axios from 'axios';
+import moment from 'moment'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state= {
         data: [],
-        nextUpdate: null,
+        lastUpdate: null,
         lines: []
     }
   }
 
   componentDidMount = () =>{
     this.fetchData();
-    
+    this.intervalId = setInterval(() => this.fetchData(), 300000)
+  }
+
+  componentWillUnmount = () =>{
+    clearInterval(this.intervalId);
   }
 
   fetchData = () =>{
     axios.get('https://api.tfl.gov.uk/line/mode/tube/status')
-      .then(response => this.setState({data: response.data}))
-      .then( () => this.setStations());
+      .then(response => this.setState({data: response.data, lastUpdate: moment().toString()}))
+      .then(() => this.setStations());
   }
 
   setStations = () =>{
@@ -52,6 +57,7 @@ class App extends React.Component {
                   <div className="Dashboard">
                     {this.state.data.map((tubeline) => <Line info = {tubeline}></Line>)}
                   </div>
+                  <div>Last updated: {this.state.lastUpdate}</div>
               </Route>
             </Switch>
           </div>
