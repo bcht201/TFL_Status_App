@@ -1,29 +1,26 @@
-# TFL Tube Status App
+# TFL Tube Status App - 3 day project
 The idea of this project is to use the TFL api to create a deployed website that reflects the current status of each tube line.
+Link: https://immense-brook-90012.herokuapp.com/
+
+## User stories
+- As a user, I should be able to see a quick summary of what the status for all the lines of the tube
+- As a user, I should be able to click on a specific line to see further information about a line
+
+### To be implemented
+- As a user, I should be able to see other information such as whether a line has Night tube service or not
+- As a user, I should be able to see a timestamp for when the information being displayed has last been updated
+- As a user, I should be able to see other information such as congestion
+
+## Responsive Design
+- min-width: 480px	Mobile-landscape (and larger)
+- min-width: 768px	Tablet-portrait (and larger)
+- min-width: 992px	Tablet-landscape (and larger)
+- min-width: 1200px	Laptops (and langer)
 
 ## Available Scripts
-
 In the project directory, you can run:
-
+### `npm install`
+- Install all dependencies required to run the app
 ### `npm start`
+- Start the app 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
